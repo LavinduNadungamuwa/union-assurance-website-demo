@@ -1,8 +1,8 @@
 import "./style.css";
 
-export default function Button({btnName=''}) {
+export default function Button({btnName='', bgcolor= {}, color= {}}) {
   return (
-    <button className="btn">
+    <button className="btn" style={{backgroundColor: bgcolor, color: color}}>
             {btnName}
     </button>
   );
