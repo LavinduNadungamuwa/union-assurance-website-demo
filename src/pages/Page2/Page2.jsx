@@ -1,11 +1,11 @@
 import React from "react"
 import Button from "../../common/component/Button/Button"
-import img1 from "../../assets/img1.png"
+import img2 from "../../assets/img2.png"
 import logo from "../../assets/logo.png"
+import BottomBar from "../../common/component/BottomBar/BottomBar";
 import "./style.css"
-import BottomBar from "../../common/component/BottomBar/BottomBar"
 
-export default function Home() {
+export default function Page2() {
 
     return (
         <>
@@ -22,7 +22,7 @@ export default function Home() {
                         <Button btnName={"Get Started ->"} />
                     </div>
                     <div>
-                        <img src={img1} alt="Image1" className="home-image"/>
+                        <img src={img2} alt="Image2" className="pg2-image"/>
                     </div>
                 </div>
                 <BottomBar />

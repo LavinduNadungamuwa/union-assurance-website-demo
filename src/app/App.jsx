@@ -4,6 +4,7 @@ import viteLogo from '../../public/vite.svg'
 import './App.css'
 import Button from '../common/component/Button/Button'
 import Home from '../pages/Home/Home'
+import Page2 from '../pages/Page2/Page2'
 
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
   return (
     <>
       <div>
-        <Home />
+        {/* <Home /> */}
+        <Page2 />
       </div>
     </>
   )
