@@ -1,0 +1,50 @@
+.home-hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    height: 10vh;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    z-index: 1;
+}
+
+.home-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.home-subtitle {
+    font-size: 20px; 
+    line-height: 1.5rem; 
+    color: gray;
+}
+
+.pg2-image {
+    position: absolute;
+    right: 0;
+    width: auto;
+    height: 100vh;
+}
+
