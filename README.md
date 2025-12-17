@@ -1,1 +1,1 @@
-An attempt to recreate union assurance website using react, MUI, redux
+An attempt to recreate union assurance website UI using react, MUI, redux
