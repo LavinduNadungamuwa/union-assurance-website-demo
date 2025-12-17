@@ -2,8 +2,12 @@ import React from "react"
 import Button from "../../common/component/Button/Button"
 import img1 from "../../assets/img1.png"
 import logo from "../../assets/logo.png"
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+
 import "./style.css"
-import BottomBar from "../../common/component/BottomBar/BottomBar";
 
 export default function Home() {
 
@@ -17,7 +21,7 @@ export default function Home() {
                 <div className="home-container">
                     <div className="home-content">
                         <p className="home-title">Life Insurance <br /> Made Simple</p>
-                        <p className="home-subtitle">Find your goals and Plan your future</p>
+                        <p>Find your goals and Plan your future</p>
                         <br /><br />
                         <Button btnName={"Get Started ->"} />
                     </div>
@@ -25,7 +29,23 @@ export default function Home() {
                         <img src={img1} alt="Image1" className="home-image"/>
                     </div>
                 </div>
-                <BottomBar />
+                <div className="bottom-bar">
+                    <div className="social-buttons">
+                        <button className="social-btn">
+                            <FacebookIcon />
+                        </button>
+                        <button className="social-btn">
+                            <InstagramIcon />
+                        </button>
+                        <button className="social-btn">
+                            <LinkedInIcon />
+                        </button>
+                        <button className="social-btn">
+                            <TwitterIcon />
+                        </button>
+                    </div>
+                    <a href="#" className="bottom-link">Learn More</a>
+                </div>
             </div>
         </>
     )
