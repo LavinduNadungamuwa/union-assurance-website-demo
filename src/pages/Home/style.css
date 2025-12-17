@@ -10,7 +10,6 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
-    /* background-color: turquoise; */
     height: 10vh;
 }
 
@@ -18,7 +17,6 @@
     display: flex;
     flex-direction: row;
     height: 100vh;
-    /* background-color: aqua; */
 }
 
 .home-content {
@@ -29,7 +27,6 @@
     left: 10%;
     top: 30%;
     z-index: 1;
-    /* background-color: violet; */
 }
 
 .home-title {
@@ -38,10 +35,70 @@
     margin-bottom: 20px;
 }
 
+.home-subtitle {
+    font-size: 20px; 
+    line-height: 1.5rem; 
+    color: gray;
+}
+
 .home-image {
     position: absolute;
     right: 0;
     width: auto;
     height: 100vh;
-    /* background-color: lightgreen; */
+}
+
+/* ///////////////////////////// Bottom Bar Styles ///////////////////////// */
+
+.bottom-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    z-index: 2;
+    height: 10vh;
+    background-color: white;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    background-color: lightgrey;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
+.social-btn:hover {
+    background-color: #FE5000;
+    color: white;
+}
+
+.social-btn svg {
+    font-size: 20px;
+}
+
+.bottom-link {
+    color: grey;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.bottom-link:hover {
+    text-decoration: underline;
 }
