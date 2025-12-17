@@ -8,7 +8,7 @@ import Page2 from '../pages/Page2/Page2'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
   return (
     <>

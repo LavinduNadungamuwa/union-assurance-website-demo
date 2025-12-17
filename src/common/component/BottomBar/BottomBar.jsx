@@ -5,6 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import './style.css'
 
+
 export default function BottomBar() {
     return (
         <div>
@@ -28,4 +29,3 @@ export default function BottomBar() {
         </div>
     )
 }
-

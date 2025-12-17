@@ -3,7 +3,7 @@ import Button from "../../common/component/Button/Button"
 import img1 from "../../assets/img1.png"
 import logo from "../../assets/logo.png"
 import "./style.css"
-import BottomBar from "../../common/component/BottomBar/BottomBar"
+import BottomBar from "../../common/component/BottomBar/BottomBar";
 
 export default function Home() {
 
