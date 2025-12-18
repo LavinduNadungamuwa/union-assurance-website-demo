@@ -15,7 +15,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux';
-import { setFirstName, setLastName, setTitle, setDateOfBirth } from '../../store/slices/userFormSlice';
+import { setFirstName, setLastName, setTitle, setDateOfBirth, setGender } from '../../store/slices/userFormSlice';
 
 export default function Page3() {
   const [state, setState] = useState('');
@@ -27,7 +27,10 @@ export default function Page3() {
 
   const handleChange = (event) => {
     setState(event.target.value);
-    dispatch(setTitle(event.target.value === 1 ? 'Mr.' : 'Mrs.'));
+    const selectedTitle = event.target.value === 1 ? 'Mr.' : 'Mrs.';
+    const selectedGender = event.target.value === 1 ? 'Male' : 'Female';
+    dispatch(setTitle(selectedTitle));
+    dispatch(setGender(selectedGender));
   };
 
   const handleFirstNameChange = (event) => {
