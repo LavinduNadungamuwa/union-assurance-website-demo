@@ -31,6 +31,11 @@ export default function Page4() {
         <div>
             <Navbar />
             <div className='page4-container'>
+                <div className='text-container'>
+                    <p>My name is (FirstName)</p>
+                    <br />
+                    <p>And I am a (Gender) of (Age) years old.</p>
+                </div>
                 <div className='inner-container'>
                     <p className='page4-title'>Are you married?</p>
                     <Box className='form-box'>
@@ -45,7 +50,7 @@ export default function Page4() {
                             <ToggleButton value="married">Married</ToggleButton>
                         </ToggleButtonGroup>
 
-                        <TextField id="outlined-basic" label="My wife is" variant="outlined"
+                        <TextField id="outlined-basic" label="My (wife) is" variant="outlined"
                             InputProps={{
                                 startAdornment: (
                                     <InputAdornment position="start">
@@ -53,9 +58,9 @@ export default function Page4() {
                                     </InputAdornment>
                                 ),
                             }}
-                            sx={{ 
-                                marginTop: '16px', 
-                                marginBottom: '16px', 
+                            sx={{
+                                marginTop: '16px',
+                                marginBottom: '16px',
                                 width: '100%',
                                 visibility: alignment === 'married' ? 'visible' : 'hidden'
                             }} />

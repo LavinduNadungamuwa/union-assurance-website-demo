@@ -30,6 +30,13 @@ export default function Page5() {
         <div>
             <Navbar />
             <div className='page5-container'>
+                <div className='text-container'>
+                    <p>My name is (FirstName)</p>
+                    <br />
+                    <p>And I am a (Gender) of (Age) years old.</p>
+                    <br />
+                    <p>I am married to (WifeName)</p>
+                </div>
                 <p className='page5-title'>I have (kids)</p>
                 <Box className='form-box'>
                     <Slider
@@ -43,7 +50,7 @@ export default function Page5() {
                         sx={{
                             color: '#FE5000',
                             '& .MuiSlider-valueLabel': {
-                                backgroundColor: '#FE5000'
+                                backgroundColor: '#grey',
                             }
                         }}
                     />
