@@ -12,16 +12,20 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Woman2Icon from '@mui/icons-material/Woman2';
 import { useNavigate } from "react-router-dom"
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSpouseName } from '../../store/slices/userFormSlice';
 
 export default function Page4() {
 
     const [alignment, setAlignment] = useState('');
+    const [spouseNameLocal, setSpouseNameLocal] = useState('');
     
     // Get firstName, gender, and dateOfBirth from Redux store
     const firstName = useSelector((state) => state.userForm.firstName);
     const gender = useSelector((state) => state.userForm.gender);
     const dateOfBirth = useSelector((state) => state.userForm.dateOfBirth);
+
+    const dispatch = useDispatch();
 
     // Calculate age from date of birth
     const calculateAge = (dob) => {
@@ -43,6 +47,11 @@ export default function Page4() {
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
+    };
+
+    const handleSpouseNameChange = (event) => {
+        setSpouseNameLocal(event.target.value);
+        dispatch(setSpouseName(event.target.value));
     };
 
     const navigate = useNavigate();
@@ -78,6 +87,8 @@ export default function Page4() {
                             id="outlined-basic" 
                             label={`My ${gender === 'Male' ? 'wife' : gender === 'Female' ? 'husband' : '(wife/husband)'} is`} 
                             variant="outlined"
+                            value={spouseNameLocal}
+                            onChange={handleSpouseNameChange}
                             sx={{
                                 marginTop: '16px',
                                 marginBottom: '16px',

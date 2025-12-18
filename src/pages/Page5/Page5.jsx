@@ -22,6 +22,7 @@ export default function Page5() {
     const firstName = useSelector((state) => state.userForm.firstName);
     const gender = useSelector((state) => state.userForm.gender);
     const dateOfBirth = useSelector((state) => state.userForm.dateOfBirth);
+    const spouseName = useSelector((state) => state.userForm.spouseName);
 
     // Calculate age from date of birth
     const calculateAge = (dob) => {
@@ -60,7 +61,7 @@ export default function Page5() {
                     <br />
                     <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>
                     <br />
-                    <p>I am married to (WifeName)</p>
+                    <p>I am married to {spouseName || '(WifeName)'}</p>
                 </div>
                 <p className='page5-title'>I have (kids)</p>
                 <Box className='form-box'>
