@@ -51,8 +51,9 @@
 }
 
 .button-container {
-    display: flex;
-    justify-content: flex-end;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center;
     margin-top: 10px;
-    width: 100%;
+    width: 100% !important;
 }
