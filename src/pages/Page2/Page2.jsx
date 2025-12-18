@@ -5,8 +5,15 @@ import Navbar from "../../common/component/Navbar/Navbar";
 import BottomBar from "../../common/component/BottomBar/BottomBar";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import "./style.css"
+import { useNavigate } from "react-router-dom"
+
 
 export default function Page2() {
+    const navigate = useNavigate();
+
+    const handleGetStarted = () => {
+        navigate('/page3');
+    };
 
     return (
         <>
@@ -19,7 +26,7 @@ export default function Page2() {
                         <p className="home-title">Life Insurance <br /> Made Simple</p>
                         <p className="home-subtitle">Find your goals and Plan your future</p>
                         <br /><br />
-                        <Button btnName={"Get Started"}>
+                        <Button btnName={"Get Started"} onClick={handleGetStarted}>
                             <ArrowForwardIcon />
                         </Button>
                     </div>

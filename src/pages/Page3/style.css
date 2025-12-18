@@ -8,7 +8,17 @@
     /* border: 1px solid #ccc; */
 }
 
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    max-width: 320px;
+}
+
 .page3-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 30px;
@@ -24,6 +34,7 @@
     max-width: 300px;
     width: 100%;
     /* border: 1px solid #ccc; */
+    /* margin: 0 20px; */
 }
 
 .form-row-1 {

@@ -2,15 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 80vh;
-    padding: 20px;
-    padding-top: 60px;
+    max-height: 65vh;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
 }
 
 .page5-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 2rem;
     font-weight: bold;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     margin-left: -250px;
 }
 
@@ -18,7 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
     max-width: 400px;
     width: 100%;
     /* border: 1px solid #ccc; */
@@ -29,24 +30,6 @@
     flex-direction: row;
     padding: 8px 0;
     gap: 12px;
-}
-
-.toggle-button-group {
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-.toggle-button-group button {
-    flex: 1;
-}
-
-.toggle-button-group .Mui-selected {
-    background-color: #FE5000 !important;
-    color: white !important;
-}
-
-.toggle-button-group .Mui-selected:hover {
-    background-color: #FE5000 !important;
 }
 
 .button-container {

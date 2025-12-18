@@ -8,24 +8,22 @@ import './style.css'
 
 export default function BottomBar() {
     return (
-        <div>
-            <div className="bottom-bar">
-                <div className="social-buttons">
-                    <button className="social-btn">
-                        <FacebookIcon />
-                    </button>
-                    <button className="social-btn">
-                        <InstagramIcon />
-                    </button>
-                    <button className="social-btn">
-                        <LinkedInIcon />
-                    </button>
-                    <button className="social-btn">
-                        <TwitterIcon />
-                    </button>
-                </div>
-                <a href="#" className="bottom-link">Find your needs</a>
+        <div className="bottom-bar">
+            <div className="social-buttons">
+                <button className="social-btn">
+                    <FacebookIcon />
+                </button>
+                <button className="social-btn">
+                    <InstagramIcon />
+                </button>
+                <button className="social-btn">
+                    <LinkedInIcon />
+                </button>
+                <button className="social-btn">
+                    <TwitterIcon />
+                </button>
             </div>
+            <a href="#" className="bottom-link">Find your needs</a>
         </div>
     )
 }
