@@ -12,10 +12,14 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Woman2Icon from '@mui/icons-material/Woman2';
 import { useNavigate } from "react-router-dom"
+import { useSelector } from 'react-redux';
 
 export default function Page4() {
 
     const [alignment, setAlignment] = useState('');
+    
+    // Get firstName from Redux store
+    const firstName = useSelector((state) => state.userForm.firstName);
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
@@ -32,7 +36,7 @@ export default function Page4() {
             <Navbar />
             <div className='page4-container'>
                 <div className='text-container-1'>
-                    <p>My name is (FirstName)</p>
+                    <p>My name is {firstName || '(FirstName)'}</p>
                     <br />
                     <p>And I am a (Gender) of (Age) years old.</p>
                 </div>
