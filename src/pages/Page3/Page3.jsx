@@ -39,12 +39,12 @@ export default function Page3() {
           <Box className='page3-form'>
             <div className='form-row-1'>
               <FormControl sx={{ minWidth: 90 }}>
-                <InputLabel id="demo-simple-select-label">Title</InputLabel>
+                <InputLabel id="demo-simple-select-label">State</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={state}
-                  label="Title"
+                  label="State"
                   onChange={handleChange}
                 >
                   <MenuItem value={1}>Mr.</MenuItem>
