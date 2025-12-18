@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom"
 
 export default function Page4() {
 
-    const [alignment, setAlignment] = useState('web');
+    const [alignment, setAlignment] = useState('');
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
@@ -53,7 +53,12 @@ export default function Page4() {
                                     </InputAdornment>
                                 ),
                             }}
-                            sx={{ marginBottom: '16px', width: '100%' }} />
+                            sx={{ 
+                                marginTop: '16px', 
+                                marginBottom: '16px', 
+                                width: '100%',
+                                visibility: alignment === 'married' ? 'visible' : 'hidden'
+                            }} />
 
                         <div className='button-container'>
                             <Button btnName={"Next"} onClick={handleNext}>
