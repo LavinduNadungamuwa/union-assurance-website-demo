@@ -18,9 +18,28 @@ export default function Page4() {
 
     const [alignment, setAlignment] = useState('');
     
-    // Get firstName and gender from Redux store
+    // Get firstName, gender, and dateOfBirth from Redux store
     const firstName = useSelector((state) => state.userForm.firstName);
     const gender = useSelector((state) => state.userForm.gender);
+    const dateOfBirth = useSelector((state) => state.userForm.dateOfBirth);
+
+    // Calculate age from date of birth
+    const calculateAge = (dob) => {
+        if (!dob) return null;
+        const birthDate = new Date(dob);
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        
+        // Adjust age if birthday hasn't occurred yet this year
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        
+        return age;
+    };
+
+    const age = calculateAge(dateOfBirth);
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
@@ -39,7 +58,7 @@ export default function Page4() {
                 <div className='text-container-1'>
                     <p>My name is {firstName || '(FirstName)'}</p>
                     <br />
-                    <p>And I am a {gender || '(Gender)'} of (Age) years old.</p>
+                    <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>
                 </div>
                 <div className='inner-container'>
                     <p className='page4-title'>Are you married?</p>
