@@ -32,7 +32,7 @@ export default function Page3() {
     <div>
       <Navbar />
       <div className="page3-container">
-        <div className='inner-container'>
+        <div className='inner-container-p3'>
           <p className='page3-title'>Let’s get started by 
             telling a little bit about 
             yourself</p>
