@@ -11,6 +11,7 @@ import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import { useState } from 'react';
 import Slider from '@mui/material/Slider';
 import { useNavigate } from "react-router-dom"
+import { JoinFullSharp } from '@mui/icons-material';
 
 
 export default function Page5() {
@@ -49,6 +50,7 @@ export default function Page5() {
                         valueLabelDisplay="on"
                         sx={{
                             color: '#FE5000',
+                            marginTop: '-20px',
                             '& .MuiSlider-valueLabel': {
                                 backgroundColor: '#grey',
                             }
@@ -123,7 +125,7 @@ export default function Page5() {
                         ))}
                     </Box>
 
-                    <div className='button-container'>
+                    <div className='button-container-2'>
                         <Button btnName={"Next"} onClick={handleNext}>
                             <ArrowForwardIcon />
                         </Button>

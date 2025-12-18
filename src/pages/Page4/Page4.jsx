@@ -31,7 +31,7 @@ export default function Page4() {
         <div>
             <Navbar />
             <div className='page4-container'>
-                <div className='text-container'>
+                <div className='text-container-1'>
                     <p>My name is (FirstName)</p>
                     <br />
                     <p>And I am a (Gender) of (Age) years old.</p>
@@ -65,7 +65,7 @@ export default function Page4() {
                                 visibility: alignment === 'married' ? 'visible' : 'hidden'
                             }} />
 
-                        <div className='button-container'>
+                        <div className='button-container-1'>
                             <Button btnName={"Next"} onClick={handleNext}>
                                 <ArrowForwardIcon />
                             </Button>

@@ -6,9 +6,17 @@
     /* border: 1px solid #ccc; */
 }
 
+.text-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 .page5-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     margin-bottom: 40px;
     margin-left: -250px;
@@ -30,11 +38,10 @@
     gap: 12px;
 }
 
-.button-container {
+.button-container-2 {
     display: flex;
     justify-content: flex-end;
     width: 100%;
     align-self: flex-end;
-    border: 1px solid #ccc;
-    border: none !important;
+    margin-top: 5px;
 }

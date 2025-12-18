@@ -5,12 +5,12 @@
     height: 80vh;
 }
 
-.text-container {
+.text-container-1 {
     display: flex;
     flex-direction: column;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .inner-container {
@@ -27,7 +27,7 @@
 
 .page4-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     /* border: 1px solid #ccc; */
     width: 320px;
@@ -60,7 +60,7 @@
     background-color: #FE5000 !important;
 }
 
-.button-container {
+.button-container-1 {
     display: flex !important;
     justify-content: flex-end !important;
     align-items: center;
