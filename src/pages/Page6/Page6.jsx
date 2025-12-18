@@ -20,9 +20,9 @@ export default function Page6() {
         <div>
             <Navbar />
             <Box className="page6-container">
-                <Box className="upper-container">
+                <Box className="upper-container-p6">
                     <p className="page6-title">What are your main goals in life?</p>
-                    <div className='button-container'>
+                    <div className='button-container-p6'>
                         <div className='button-wrapper-1'>
                             <Button btnName={'All goals'} className='button1' bgcolor={'white'} color={grey[600]} border={'1px solid #ccc'} />
                             <Button btnName={'Goal Timeline'} className='button2' bgcolor={'white'} color={grey[600]} border={'1px solid #ccc'} />
@@ -32,7 +32,7 @@ export default function Page6() {
                         </Button>
                     </div>
                 </Box>
-                <Box className="lower-container">
+                <Box className="lower-container-p6">
                     <img src={L1} alt="Goal 1" />
                     <img src={L2} alt="Goal 2" />
                     <img src={L3} alt="Goal 3" />
@@ -41,7 +41,7 @@ export default function Page6() {
                     <img src={L6} alt="Goal 6" />
                     <img src={L7} alt="Goal 7" style={{ width: '88%', height: 'auto', margin: '5px 21px' }} />
                 </Box>
-                <div className='next-button-container'>
+                <div className='next-button-container-p6'>
                     <Button btnName={'Next'} bgcolor={'#FE5000'} color={'white'}>
                         <ArrowForward />    
                     </Button>

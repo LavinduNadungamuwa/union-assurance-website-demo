@@ -49,8 +49,6 @@ export default function Page3() {
                 >
                   <MenuItem value={1}>Mr.</MenuItem>
                   <MenuItem value={2}>Mrs.</MenuItem>
-                  <MenuItem value={3}>Ms.</MenuItem>
-                  <MenuItem value={4}>Other</MenuItem>
                 </Select>
               </FormControl>
               <TextField id="outlined-basic" label="First Name" variant="outlined"
