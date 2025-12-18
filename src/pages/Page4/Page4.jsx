@@ -74,14 +74,10 @@ export default function Page4() {
                             <ToggleButton value="married">Married</ToggleButton>
                         </ToggleButtonGroup>
 
-                        <TextField id="outlined-basic" label="My (wife) is" variant="outlined"
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <Woman2Icon />
-                                    </InputAdornment>
-                                ),
-                            }}
+                        <TextField 
+                            id="outlined-basic" 
+                            label={`My ${gender === 'Male' ? 'wife' : gender === 'Female' ? 'husband' : '(wife/husband)'} is`} 
+                            variant="outlined"
                             sx={{
                                 marginTop: '16px',
                                 marginBottom: '16px',
