@@ -1,0 +1,57 @@
+.page5-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+.page5-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-left: -250px;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 400px;
+    width: 100%;
+    /* border: 1px solid #ccc; */
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 0;
+    gap: 12px;
+}
+
+.toggle-button-group {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.toggle-button-group button {
+    flex: 1;
+}
+
+.toggle-button-group .Mui-selected {
+    background-color: #FE5000 !important;
+    color: white !important;
+}
+
+.toggle-button-group .Mui-selected:hover {
+    background-color: #FE5000 !important;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-self: flex-end;
+}

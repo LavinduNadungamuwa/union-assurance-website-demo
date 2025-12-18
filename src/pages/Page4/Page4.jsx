@@ -1,0 +1,61 @@
+import React from 'react'
+import Button from "../../common/component/Button/Button"
+import "./style.css"
+import Navbar from '../../common/component/Navbar/Navbar';
+import BottomBar from '../../common/component/BottomBar/BottomBar';
+import { useState } from 'react';
+import { Box } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Woman2Icon from '@mui/icons-material/Woman2';
+
+export default function Page4() {
+
+    const [alignment, setAlignment] = React.useState('web');
+
+    const handleChange = (event, newAlignment) => {
+        setAlignment(newAlignment);
+    };
+
+    return (
+        <div>
+            <Navbar />
+            <div className='page4-container'>
+                <p className='page4-title'>Are you married?</p>
+                <Box className='form-box'>
+                    <ToggleButtonGroup
+                        className='toggle-button-group'
+                        value={alignment}
+                        exclusive
+                        onChange={handleChange}
+                        aria-label="Platform"
+                    >
+                        <ToggleButton value="single">Single</ToggleButton>
+                        <ToggleButton value="married">Married</ToggleButton>
+                    </ToggleButtonGroup>
+
+                    <TextField id="outlined-basic" label="My wife is" variant="outlined"
+                        InputProps={{
+                            startAdornment: (
+                                <InputAdornment position="start">
+                                    <Woman2Icon />
+                                </InputAdornment>
+                            ),
+                        }}
+                        sx={{ marginBottom: '16px', width: '100%' }} />
+
+                    <div className='button-container'>
+                        <Button btnName={"Next"}>
+                            <ArrowForwardIcon />
+                        </Button>
+                    </div>
+                </Box>
+
+            </div>
+            <BottomBar />
+        </div>
+    )
+}

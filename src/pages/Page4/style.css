@@ -1,0 +1,48 @@
+.page4-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+}
+
+.page4-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    margin-left: -150px;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 300px;
+    width: 100%;
+}
+
+.toggle-button-group {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.toggle-button-group button {
+    width: 100%;
+}
+
+.toggle-button-group .Mui-selected {
+    background-color: #FE5000 !important;
+    color: white !important;
+}
+
+.toggle-button-group .Mui-selected:hover {
+    background-color: #FE5000 !important;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    width: 100%;
+}
