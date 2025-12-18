@@ -1,0 +1,56 @@
+.page6-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 60px;
+    height: 80vh;
+}
+
+.upper-container {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid #ccc; */
+    padding: 10px 20px;
+}
+
+.page6-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+    max-width: 380px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-self: flex-end;
+}
+
+.button-wrapper-1 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.lower-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    /* border: 1px solid #ccc; */
+    padding: 10px 0;
+}
+
+.lower-container img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.next-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
