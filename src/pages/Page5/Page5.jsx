@@ -10,6 +10,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import { useState } from 'react';
 import Slider from '@mui/material/Slider';
+import { useNavigate } from "react-router-dom"
 
 
 export default function Page5() {
@@ -17,11 +18,19 @@ export default function Page5() {
 
     const handleSliderChange = (event, newValue) => {
         setKidsCount(newValue);
-    };    return (
+    };
+
+    const navigate = useNavigate();
+
+    const handleNext = () => {
+        navigate('/page6');
+    };
+
+    return (
         <div>
             <Navbar />
             <div className='page5-container'>
-                <p className='page5-title'>I have kids</p>
+                <p className='page5-title'>I have (kids)</p>
                 <Box className='form-box'>
                     <Slider
                         value={kidsCount}
@@ -33,17 +42,16 @@ export default function Page5() {
                         valueLabelDisplay="on"
                         sx={{
                             color: '#FE5000',
-                            marginBottom: '10px',
                             '& .MuiSlider-valueLabel': {
                                 backgroundColor: '#FE5000'
                             }
                         }}
                     />
-                    <h2 style={{ marginBottom: '16px', color: 'grey' }}>there are</h2>
-                    
-                    <Box sx={{ 
-                        maxHeight: '200px', 
-                        overflowY: 'auto', 
+                    <h2 style={{ color: 'grey' }}>there are</h2>
+
+                    <Box sx={{
+                        maxHeight: '200px',
+                        overflowY: 'auto',
                         overflowX: 'hidden',
                         paddingRight: '10px',
                         marginBottom: '16px',
@@ -64,9 +72,9 @@ export default function Page5() {
                     }}>
                         {Array.from({ length: kidsCount }, (_, index) => (
                             <div className='form-row' key={index}>
-                                <TextField 
-                                    id={`kid-name-${index}`} 
-                                    label={`Kid ${index + 1} is`} 
+                                <TextField
+                                    id={`kid-name-${index}`}
+                                    label={`Kid ${index + 1} is`}
                                     variant="outlined"
                                     type="text"
                                     InputProps={{
@@ -76,17 +84,17 @@ export default function Page5() {
                                             </InputAdornment>
                                         ),
                                     }}
-                                    sx={{ 
-                                        width: '60%', 
+                                    sx={{
+                                        width: '60%',
                                         marginBottom: '10px',
                                         '& .MuiInputBase-root': {
                                             height: '45px'
                                         }
-                                    }} 
+                                    }}
                                 />
 
-                                <TextField 
-                                    id={`kid-age-${index}`} 
+                                <TextField
+                                    id={`kid-age-${index}`}
                                     variant="outlined"
                                     type="number"
                                     InputProps={{
@@ -96,20 +104,20 @@ export default function Page5() {
                                             </InputAdornment>
                                         ),
                                     }}
-                                    sx={{ 
-                                        width: '40%', 
+                                    sx={{
+                                        width: '40%',
                                         marginBottom: '10px',
                                         '& .MuiInputBase-root': {
                                             height: '45px'
                                         }
-                                    }} 
+                                    }}
                                 />
                             </div>
                         ))}
                     </Box>
 
                     <div className='button-container'>
-                        <Button btnName={"Next"}>
+                        <Button btnName={"Next"} onClick={handleNext}>
                             <ArrowForwardIcon />
                         </Button>
                     </div>
