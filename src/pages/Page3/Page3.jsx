@@ -14,12 +14,38 @@ import PersonIcon from '@mui/icons-material/Person';
 import InputAdornment from '@mui/material/InputAdornment';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from 'react-redux';
+import { setFirstName, setLastName, setTitle, setDateOfBirth, setGender } from '../../store/slices/userFormSlice';
 
 export default function Page3() {
   const [state, setState] = useState('');
+  const [firstNameLocal, setFirstNameLocal] = useState('');
+  const [lastNameLocal, setLastNameLocal] = useState('');
+  const [dobLocal, setDobLocal] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
     setState(event.target.value);
+    const selectedTitle = event.target.value === 1 ? 'Mr.' : 'Mrs.';
+    const selectedGender = event.target.value === 1 ? 'Male' : 'Female';
+    dispatch(setTitle(selectedTitle));
+    dispatch(setGender(selectedGender));
+  };
+
+  const handleFirstNameChange = (event) => {
+    setFirstNameLocal(event.target.value);
+    dispatch(setFirstName(event.target.value));
+  };
+
+  const handleLastNameChange = (event) => {
+    setLastNameLocal(event.target.value);
+    dispatch(setLastName(event.target.value));
+  };
+
+  const handleDobChange = (event) => {
+    setDobLocal(event.target.value);
+    dispatch(setDateOfBirth(event.target.value));
   };
 
   const navigate = useNavigate();
@@ -52,6 +78,8 @@ export default function Page3() {
                 </Select>
               </FormControl>
               <TextField id="outlined-basic" label="First Name" variant="outlined"
+                value={firstNameLocal}
+                onChange={handleFirstNameChange}
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">
@@ -64,6 +92,8 @@ export default function Page3() {
             </div>
 
             <TextField id="outlined-basic" label="Last Name" variant="outlined"
+              value={lastNameLocal}
+              onChange={handleLastNameChange}
               InputProps={{
                 startAdornment: (
                   <InputAdornment position="start">
@@ -79,6 +109,8 @@ export default function Page3() {
               label="Date of Birth"
               type="date"
               variant="outlined"
+              value={dobLocal}
+              onChange={handleDobChange}
               InputLabelProps={{
                 shrink: true,
               }}

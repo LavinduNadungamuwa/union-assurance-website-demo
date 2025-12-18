@@ -12,13 +12,46 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Woman2Icon from '@mui/icons-material/Woman2';
 import { useNavigate } from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux';
+import { setSpouseName } from '../../store/slices/userFormSlice';
 
 export default function Page4() {
 
     const [alignment, setAlignment] = useState('');
+    const [spouseNameLocal, setSpouseNameLocal] = useState('');
+    
+    // Get firstName, gender, and dateOfBirth from Redux store
+    const firstName = useSelector((state) => state.userForm.firstName);
+    const gender = useSelector((state) => state.userForm.gender);
+    const dateOfBirth = useSelector((state) => state.userForm.dateOfBirth);
+
+    const dispatch = useDispatch();
+
+    // Calculate age from date of birth
+    const calculateAge = (dob) => {
+        if (!dob) return null;
+        const birthDate = new Date(dob);
+        const today = new Date();
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        
+        // Adjust age if birthday hasn't occurred yet this year
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        
+        return age;
+    };
+
+    const age = calculateAge(dateOfBirth);
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
+    };
+
+    const handleSpouseNameChange = (event) => {
+        setSpouseNameLocal(event.target.value);
+        dispatch(setSpouseName(event.target.value));
     };
 
     const navigate = useNavigate();
@@ -32,9 +65,9 @@ export default function Page4() {
             <Navbar />
             <div className='page4-container'>
                 <div className='text-container-1'>
-                    <p>My name is (FirstName)</p>
+                    <p>My name is {firstName || '(FirstName)'}</p>
                     <br />
-                    <p>And I am a (Gender) of (Age) years old.</p>
+                    <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>
                 </div>
                 <div className='inner-container'>
                     <p className='page4-title'>Are you married?</p>
@@ -50,14 +83,12 @@ export default function Page4() {
                             <ToggleButton value="married">Married</ToggleButton>
                         </ToggleButtonGroup>
 
-                        <TextField id="outlined-basic" label="My (wife) is" variant="outlined"
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position="start">
-                                        <Woman2Icon />
-                                    </InputAdornment>
-                                ),
-                            }}
+                        <TextField 
+                            id="outlined-basic" 
+                            label={`My ${gender === 'Male' ? 'wife' : gender === 'Female' ? 'husband' : '(wife/husband)'} is`} 
+                            variant="outlined"
+                            value={spouseNameLocal}
+                            onChange={handleSpouseNameChange}
                             sx={{
                                 marginTop: '16px',
                                 marginBottom: '16px',
