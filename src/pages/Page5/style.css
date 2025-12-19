@@ -13,7 +13,6 @@
 
 .kids-meter {
     /* border: 1px solid #ccc; */
-    background-color: #f7f4f4;
     padding: 0 20px;
     width: 400px;
 }
@@ -45,8 +44,12 @@
 .form-row {
     display: flex;
     flex-direction: row;
-    padding: 8px 0;
+    padding-top: 8px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
     gap: 12px;
+    /* border: 1px solid #ccc; */
 }
 
 .button-container-p5 {
