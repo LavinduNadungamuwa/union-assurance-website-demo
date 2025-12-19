@@ -17,6 +17,7 @@ import { useSelector } from 'react-redux';
 
 export default function Page5() {
     const [kidsCount, setKidsCount] = useState(0);
+    const [kidsData, setKidsData] = useState([]);
 
     // Get firstName, gender, and dateOfBirth from Redux store
     const firstName = useSelector((state) => state.userForm.firstName);
@@ -45,13 +46,42 @@ export default function Page5() {
 
     const handleSliderChange = (event, newValue) => {
         setKidsCount(newValue);
+        // Initialize kidsData array when slider changes
+        const newKidsData = Array.from({ length: newValue }, (_, index) => 
+            kidsData[index] || { name: '', age: '' }
+        );
+        setKidsData(newKidsData);
+    };
+
+    const handleKidNameChange = (index, value) => {
+        const newKidsData = [...kidsData];
+        newKidsData[index] = { ...newKidsData[index], name: value };
+        setKidsData(newKidsData);
+    };
+
+    const handleKidAgeChange = (index, value) => {
+        const newKidsData = [...kidsData];
+        newKidsData[index] = { ...newKidsData[index], age: value };
+        setKidsData(newKidsData);
     };
 
     const navigate = useNavigate();
 
     const handleNext = () => {
+        // If married and has kids, validate that all kid info is filled
+        if (maritalStatus === 'married' && kidsCount > 0) {
+            const allKidsFilled = kidsData.every(kid => kid.name.trim() && kid.age);
+            if (!allKidsFilled) {
+                alert('Please fill in all information for each child (name and age).');
+                return;
+            }
+        }
         navigate('/page6');
     };
+
+    // Check if form is valid
+    const isFormValid = maritalStatus !== 'married' || kidsCount === 0 || 
+        (kidsData.length === kidsCount && kidsData.every(kid => kid.name.trim() && kid.age));
 
     return (
         <div>
@@ -119,6 +149,8 @@ export default function Page5() {
                                             label={`Kid ${index + 1} is`}
                                             variant="outlined"
                                             type="text"
+                                            value={kidsData[index]?.name || ''}
+                                            onChange={(e) => handleKidNameChange(index, e.target.value)}
                                             InputProps={{
                                                 startAdornment: (
                                                     <InputAdornment position="start">
@@ -139,6 +171,8 @@ export default function Page5() {
                                             id={`kid-age-${index}`}
                                             variant="outlined"
                                             type="number"
+                                            value={kidsData[index]?.age || ''}
+                                            onChange={(e) => handleKidAgeChange(index, e.target.value)}
                                             InputProps={{
                                                 endAdornment: (
                                                     <InputAdornment position="end" sx={{ backgroundColor: 'lightgrey', padding: '5px', borderRadius: '4px', fontSize: '10px' }}>
@@ -164,7 +198,7 @@ export default function Page5() {
                         </div>
                     )}
                     <div className='button-container-p5'>
-                        <Button btnName={"Next"} onClick={handleNext}>
+                        <Button btnName={"Next"} onClick={handleNext} disabled={!isFormValid}>
                             <ArrowForwardIcon />
                         </Button>
                     </div>

@@ -51,8 +51,16 @@ export default function Page3() {
   const navigate = useNavigate();
 
     const handleNext = () => {
-        navigate('/page4');
+        // Check if all fields are filled
+        if (state && firstNameLocal.trim() && lastNameLocal.trim() && dobLocal) {
+            navigate('/page4');
+        } else {
+            alert('Please fill in all fields before proceeding.');
+        }
     };
+
+    // Check if all required fields are filled
+    const isFormValid = state && firstNameLocal.trim() && lastNameLocal.trim() && dobLocal;
 
   return (
     <div>
@@ -118,7 +126,7 @@ export default function Page3() {
             />
 
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px' }}>
-              <Button btnName={"Next"} onClick={handleNext}>
+              <Button btnName={"Next"} onClick={handleNext} disabled={!isFormValid}>
                 <ArrowForwardIcon />
               </Button>
             </Box>

@@ -59,8 +59,21 @@ export default function Page4() {
     const navigate = useNavigate();
 
     const handleNext = () => {
-        navigate('/page5');
+        // Check if marital status is selected
+        // If married, spouse name must be filled
+        if (alignment) {
+            if (alignment === 'married' && !spouseNameLocal.trim()) {
+                alert('Please enter your spouse\'s name.');
+                return;
+            }
+            navigate('/page5');
+        } else {
+            alert('Please select your marital status.');
+        }
     };
+
+    // Check if all required fields are filled
+    const isFormValid = alignment && (alignment === 'single' || (alignment === 'married' && spouseNameLocal.trim()));
 
     return (
         <div>
@@ -99,7 +112,7 @@ export default function Page4() {
                             }} />
 
                         <div className='button-container-1'>
-                            <Button btnName={"Next"} onClick={handleNext}>
+                            <Button btnName={"Next"} onClick={handleNext} disabled={!isFormValid}>
                                 <ArrowForwardIcon />
                             </Button>
                         </div>
