@@ -13,7 +13,7 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Woman2Icon from '@mui/icons-material/Woman2';
 import { useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
-import { setSpouseName } from '../../store/slices/userFormSlice';
+import { setSpouseName, setMaritalStatus } from '../../store/slices/userFormSlice';
 
 export default function Page4() {
 
@@ -47,6 +47,8 @@ export default function Page4() {
 
     const handleChange = (event, newAlignment) => {
         setAlignment(newAlignment);
+        // Dispatch marital status to Redux
+        dispatch(setMaritalStatus(newAlignment));
     };
 
     const handleSpouseNameChange = (event) => {

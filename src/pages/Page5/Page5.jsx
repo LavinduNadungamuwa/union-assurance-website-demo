@@ -23,6 +23,7 @@ export default function Page5() {
     const gender = useSelector((state) => state.userForm.gender);
     const dateOfBirth = useSelector((state) => state.userForm.dateOfBirth);
     const spouseName = useSelector((state) => state.userForm.spouseName);
+    const maritalStatus = useSelector((state) => state.userForm.maritalStatus);
 
     // Calculate age from date of birth
     const calculateAge = (dob) => {
@@ -61,9 +62,17 @@ export default function Page5() {
                         <p>My name is {firstName || '(FirstName)'}</p>
                         <br />
                         <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>   
+                        <br />
+                        <p>
+                            {maritalStatus === 'married' 
+                                ? `I am married to ${spouseName || '(WifeName)'}` 
+                                : maritalStatus === 'single' 
+                                ? 'I am single' 
+                                : 'I am married to (WifeName)'}
+                        </p>
                     </div>
-                    <div className='kids-meter'>
-                        <p className='text-container-p5'>I am married to {spouseName || '(WifeName)'}</p>
+                    {maritalStatus === 'married' && (
+                        <div className='kids-meter'>
                         <p className='page5-title'>I have (kids)</p>
                         <Box className='form-box'>
                             <Slider
@@ -153,7 +162,8 @@ export default function Page5() {
 
 
                         </Box>
-                    </div>
+                        </div>
+                    )}
                     <div className='button-container-p5'>
                         <Button btnName={"Next"} onClick={handleNext}>
                             <ArrowForwardIcon />
