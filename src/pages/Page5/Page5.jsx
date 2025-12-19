@@ -85,20 +85,18 @@ export default function Page5() {
                                 valueLabelDisplay="on"
                                 sx={{
                                     color: '#FE5000',
-                                    marginTop: '-20px',
                                     '& .MuiSlider-valueLabel': {
                                         backgroundColor: 'grey',
                                     }
                                 }}
                             />
-                            <h2 style={{ color: 'grey' }}>there are</h2>
+                            <h2 style={{ color: 'grey', marginBottom: '5px' }}>they are</h2>
 
                             <Box sx={{
                                 maxHeight: '200px',
                                 overflowY: 'auto',
                                 overflowX: 'hidden',
                                 paddingRight: '10px',
-                                marginBottom: '16px',
                                 '&::-webkit-scrollbar': {
                                     width: '8px',
                                 },
@@ -143,13 +141,14 @@ export default function Page5() {
                                             type="number"
                                             InputProps={{
                                                 endAdornment: (
-                                                    <InputAdornment position="end" sx={{ backgroundColor: 'lightgrey', padding: '3px 8px', borderRadius: '4px', fontSize: '14px' }}>
+                                                    <InputAdornment position="end" sx={{ backgroundColor: 'lightgrey', padding: '5px', borderRadius: '4px', fontSize: '10px' }}>
                                                         years old
                                                     </InputAdornment>
                                                 ),
                                             }}
                                             sx={{
-                                                width: '40%',
+                                                width: '50%',
+                                                padding: '0',
                                                 marginBottom: '10px',
                                                 '& .MuiInputBase-root': {
                                                     height: '45px'
