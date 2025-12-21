@@ -6,7 +6,7 @@ import './style.css'
 export default function Navbar(props) {
     return (
         <div>
-            <div className="navbar">
+            <div className="navbar" style={{ marginBottom: props.marginBottom }}>
                 <img src={logo} alt="Logo" style={{ width: "180px", height: "auto" }} />
                 {props.children}
             </div>
