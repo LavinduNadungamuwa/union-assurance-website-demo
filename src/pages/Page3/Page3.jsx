@@ -16,6 +16,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { setFirstName, setLastName, setTitle, setDateOfBirth, setGender } from '../../store/slices/userFormSlice';
+import CircularWithValueLabel from '../../common/component/ProgressBar/ProgressBar';
 
 export default function Page3() {
   const [state, setState] = useState('');
@@ -50,21 +51,22 @@ export default function Page3() {
 
   const navigate = useNavigate();
 
-    const handleNext = () => {
-        // Check if all fields are filled
-        if (state && firstNameLocal.trim() && lastNameLocal.trim() && dobLocal) {
-            navigate('/page4');
-        } else {
-            alert('Please fill in all fields before proceeding.');
-        }
-    };
+  // Check if all fields are filled
+  const isFormValid = state && firstNameLocal.trim() && lastNameLocal.trim() && dobLocal;
 
-    // Check if all required fields are filled
-    const isFormValid = state && firstNameLocal.trim() && lastNameLocal.trim() && dobLocal;
+  const handleNext = () => {
+      if (isFormValid) {
+          navigate('/page4');
+      } else {
+          alert('Please fill in all fields before proceeding.');
+      }
+  };
 
   return (
     <div>
-      <Navbar />
+      <Navbar>
+        <CircularWithValueLabel value={25} />
+      </Navbar>
       <div className="page3-container">
         <div className='inner-container-p3'>
           <p className='page3-title'>Let’s get started by 

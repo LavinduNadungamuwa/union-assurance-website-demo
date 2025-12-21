@@ -5,12 +5,16 @@
     height: 80vh;
 }
 
-.text-container-1 {
+.text-container-p4 {
     display: flex;
     flex-direction: column;
     margin-bottom: 80px;
     text-align: center;
     font-size: 1.2rem;
+}
+
+.text-container-p4 p {
+    margin: 5px 0;
 }
 
 .inner-container {
