@@ -30,8 +30,9 @@ export default function Page6() {
                             <Button btnName={'All goals'} className='button1' bgcolor={'white'} color={grey[600]} border={'1px solid #ccc'} />
                             <Button btnName={'Goal Timeline'} className='button2' bgcolor={'white'} color={grey[600]} border={'1px solid #ccc'} />
                         </div>
-                        <Button btnName={'Add goal'} className='button3' bgcolor={'white'} color={'#FE5000'}>
+                        <Button className='button3' bgcolor={'white'} color={'#FE5000'}>
                             <AddIcon />
+                            Add goal
                         </Button>
                     </div>
                 </Box>
