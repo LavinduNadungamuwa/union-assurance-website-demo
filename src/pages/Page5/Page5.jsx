@@ -175,7 +175,7 @@ export default function Page5() {
                                             onChange={(e) => handleKidAgeChange(index, e.target.value)}
                                             InputProps={{
                                                 endAdornment: (
-                                                    <InputAdornment position="end" sx={{ backgroundColor: 'lightgrey', padding: '5px', borderRadius: '4px', fontSize: '10px' }}>
+                                                    <InputAdornment position="end" sx={{ backgroundColor: 'lightgrey', padding: '5px', borderRadius: '4px', fontSize: '10px', width:'fit-content' }}>
                                                         years old
                                                     </InputAdornment>
                                                 ),
