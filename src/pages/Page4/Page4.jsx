@@ -10,16 +10,16 @@ import InputAdornment from '@mui/material/InputAdornment';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import Woman2Icon from '@mui/icons-material/Woman2';
 import { useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux';
 import { setSpouseName, setMaritalStatus } from '../../store/slices/userFormSlice';
+import CircularWithValueLabel from '../../common/component/ProgressBar/ProgressBar';
 
 export default function Page4() {
 
     const [alignment, setAlignment] = useState('');
     const [spouseNameLocal, setSpouseNameLocal] = useState('');
-    
+
     // Get firstName, gender, and dateOfBirth from Redux store
     const firstName = useSelector((state) => state.userForm.firstName);
     const gender = useSelector((state) => state.userForm.gender);
@@ -33,7 +33,7 @@ export default function Page4() {
         const birthDate = new Date(dob);
         const today = new Date();
         let age = today.getFullYear() - birthDate.getFullYear();
-        
+
         return age;
     };
 
@@ -50,31 +50,24 @@ export default function Page4() {
     };
 
     const navigate = useNavigate();
-
-    const handleNext = () => {
-        // Check if marital status is selected
-        // If married, spouse name must be filled
-        if (alignment) {
-            if (alignment === 'married' && !spouseNameLocal.trim()) {
-                alert('Please enter your spouse\'s name.');
-                return;
-            }
-            navigate('/page5');
-        } else {
-            alert('Please select your marital status.');
-        }
-    };
-
+    
     // Check if all required fields are filled
     const isFormValid = alignment && (alignment === 'single' || (alignment === 'married' && spouseNameLocal.trim()));
 
+    const handleNext = () => {
+        if (isFormValid) {
+            navigate('/page5');
+        }
+    };
+
     return (
         <div>
-            <Navbar />
+            <Navbar>
+                <CircularWithValueLabel value={50} />
+            </Navbar>
             <div className='page4-container'>
-                <div className='text-container-1'>
+                <div className='text-container-p4'>
                     <p>My name is {firstName || '(FirstName)'}</p>
-                    <br />
                     <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>
                 </div>
                 <div className='inner-container'>
@@ -91,9 +84,9 @@ export default function Page4() {
                             <ToggleButton value="married">Married</ToggleButton>
                         </ToggleButtonGroup>
 
-                        <TextField 
-                            id="outlined-basic" 
-                            label={`My ${gender === 'Male' ? 'wife' : gender === 'Female' ? 'husband' : '(wife/husband)'} is`} 
+                        <TextField
+                            id="outlined-basic"
+                            label={`My ${gender === 'Male' ? 'wife' : gender === 'Female' ? 'husband' : '(wife/husband)'} is`}
                             variant="outlined"
                             value={spouseNameLocal}
                             onChange={handleSpouseNameChange}

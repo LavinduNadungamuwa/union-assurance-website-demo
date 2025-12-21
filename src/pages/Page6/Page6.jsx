@@ -14,11 +14,14 @@ import L5 from '../../assets/L5.png'
 import L6 from '../../assets/L6.png'
 import L7 from '../../assets/L7.png'
 import { ArrowForward } from '@mui/icons-material'
+import CircularWithValueLabel from '../../common/component/ProgressBar/ProgressBar';
 
 export default function Page6() {
     return (
         <div>
-            <Navbar />
+            <Navbar>
+                <CircularWithValueLabel value={100} />
+            </Navbar>
             <Box className="page6-container">
                 <Box className="upper-container-p6">
                     <p className="page6-title">What are your main goals in life?</p>
@@ -43,7 +46,7 @@ export default function Page6() {
                 </Box>
                 <div className='next-button-container-p6'>
                     <Button btnName={'Next'} bgcolor={'#FE5000'} color={'white'}>
-                        <ArrowForward />    
+                        <ArrowForward />
                     </Button>
                 </div>
             </Box>

@@ -11,8 +11,9 @@ import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import { useState } from 'react';
 import Slider from '@mui/material/Slider';
 import { useNavigate } from "react-router-dom"
-import { JoinFullSharp } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
+import CircularWithValueLabel from '../../common/component/ProgressBar/ProgressBar';
+
 
 
 export default function Page5() {
@@ -47,7 +48,7 @@ export default function Page5() {
     const handleSliderChange = (event, newValue) => {
         setKidsCount(newValue);
         // Initialize kidsData array when slider changes
-        const newKidsData = Array.from({ length: newValue }, (_, index) => 
+        const newKidsData = Array.from({ length: newValue }, (_, index) =>
             kidsData[index] || { name: '', age: '' }
         );
         setKidsData(newKidsData);
@@ -80,121 +81,121 @@ export default function Page5() {
     };
 
     // Check if form is valid
-    const isFormValid = maritalStatus !== 'married' || kidsCount === 0 || 
+    const isFormValid = maritalStatus !== 'married' || kidsCount === 0 ||
         (kidsData.length === kidsCount && kidsData.every(kid => kid.name.trim() && kid.age));
 
     return (
         <div>
-            <Navbar />
+            <Navbar>
+                <CircularWithValueLabel value={75} />
+            </Navbar>
             <div className='page5-container'>
                 <div className='page5-content'>
                     <div className='text-container-p5'>
                         <p>My name is {firstName || '(FirstName)'}</p>
-                        <br />
-                        <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>   
-                        <br />
+                        <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>
                         <p>
-                            {maritalStatus === 'married' 
-                                ? `I am married to ${spouseName || '(WifeName)'}` 
-                                : maritalStatus === 'single' 
-                                ? 'I am single' 
-                                : 'I am married to (WifeName)'}
+                            {maritalStatus === 'married'
+                                ? `I am married to ${spouseName || '(WifeName)'}`
+                                : maritalStatus === 'single'
+                                    ? 'I am single'
+                                    : 'I am married to (WifeName)'}
                         </p>
                     </div>
                     {maritalStatus === 'married' && (
                         <div className='kids-meter'>
-                        <p className='page5-title'>I have (kids)</p>
-                        <Box className='form-box'>
-                            <Slider
-                                value={kidsCount}
-                                onChange={handleSliderChange}
-                                min={0}
-                                max={10}
-                                step={1}
-                                marks
-                                valueLabelDisplay="on"
-                                sx={{
-                                    color: '#FE5000',
-                                    '& .MuiSlider-valueLabel': {
-                                        backgroundColor: 'grey',
+                            <p className='page5-title'>I have (kids)</p>
+                            <Box className='form-box'>
+                                <Slider
+                                    value={kidsCount}
+                                    onChange={handleSliderChange}
+                                    min={0}
+                                    max={10}
+                                    step={1}
+                                    marks
+                                    valueLabelDisplay="on"
+                                    sx={{
+                                        color: '#FE5000',
+                                        '& .MuiSlider-valueLabel': {
+                                            backgroundColor: 'grey',
+                                        }
+                                    }}
+                                />
+                                <h2 style={{ color: 'grey', marginBottom: '5px' }}>they are</h2>
+
+                                <Box sx={{
+                                    maxHeight: '200px',
+                                    overflowY: 'auto',
+                                    overflowX: 'hidden',
+                                    paddingRight: '10px',
+                                    '&::-webkit-scrollbar': {
+                                        width: '8px',
+                                    },
+                                    '&::-webkit-scrollbar-track': {
+                                        backgroundColor: '#f1f1f1',
+                                        borderRadius: '10px',
+                                    },
+                                    '&::-webkit-scrollbar-thumb': {
+                                        backgroundColor: '#FE5000',
+                                        borderRadius: '10px',
+                                    },
+                                    '&::-webkit-scrollbar-thumb:hover': {
+                                        backgroundColor: '#e04600',
                                     }
-                                }}
-                            />
-                            <h2 style={{ color: 'grey', marginBottom: '5px' }}>they are</h2>
+                                }}>
+                                    {Array.from({ length: kidsCount }, (_, index) => (
+                                        <div className='form-row' key={index}>
+                                            <TextField
+                                                id={`kid-name-${index}`}
+                                                label={`Kid ${index + 1} is`}
+                                                variant="outlined"
+                                                type="text"
+                                                value={kidsData[index]?.name || ''}
+                                                onChange={(e) => handleKidNameChange(index, e.target.value)}
+                                                InputProps={{
+                                                    startAdornment: (
+                                                        <InputAdornment position="start">
+                                                            <AccessibilityNewIcon sx={{ fontSize: '20px' }} />
+                                                        </InputAdornment>
+                                                    ),
+                                                }}
+                                                sx={{
+                                                    width: '60%',
+                                                    marginBottom: '10px',
+                                                    '& .MuiInputBase-root': {
+                                                        height: '45px'
+                                                    }
+                                                }}
+                                            />
 
-                            <Box sx={{
-                                maxHeight: '200px',
-                                overflowY: 'auto',
-                                overflowX: 'hidden',
-                                paddingRight: '10px',
-                                '&::-webkit-scrollbar': {
-                                    width: '8px',
-                                },
-                                '&::-webkit-scrollbar-track': {
-                                    backgroundColor: '#f1f1f1',
-                                    borderRadius: '10px',
-                                },
-                                '&::-webkit-scrollbar-thumb': {
-                                    backgroundColor: '#FE5000',
-                                    borderRadius: '10px',
-                                },
-                                '&::-webkit-scrollbar-thumb:hover': {
-                                    backgroundColor: '#e04600',
-                                }
-                            }}>
-                                {Array.from({ length: kidsCount }, (_, index) => (
-                                    <div className='form-row' key={index}>
-                                        <TextField
-                                            id={`kid-name-${index}`}
-                                            label={`Kid ${index + 1} is`}
-                                            variant="outlined"
-                                            type="text"
-                                            value={kidsData[index]?.name || ''}
-                                            onChange={(e) => handleKidNameChange(index, e.target.value)}
-                                            InputProps={{
-                                                startAdornment: (
-                                                    <InputAdornment position="start">
-                                                        <AccessibilityNewIcon sx={{ fontSize: '20px' }} />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                            sx={{
-                                                width: '60%',
-                                                marginBottom: '10px',
-                                                '& .MuiInputBase-root': {
-                                                    height: '45px'
-                                                }
-                                            }}
-                                        />
+                                            <TextField
+                                                id={`kid-age-${index}`}
+                                                variant="outlined"
+                                                type="number"
+                                                value={kidsData[index]?.age || ''}
+                                                onChange={(e) => handleKidAgeChange(index, e.target.value)}
+                                                InputProps={{
+                                                    endAdornment: (
+                                                        <InputAdornment position="end" sx={{ backgroundColor: 'lightgrey', padding: '5px', borderRadius: '4px', fontSize: '10px', width: 'fit-content' }}>
+                                                            years old
+                                                        </InputAdornment>
+                                                    ),
+                                                }}
+                                                sx={{
+                                                    width: '50%',
+                                                    padding: '0',
+                                                    marginBottom: '10px',
+                                                    '& .MuiInputBase-root': {
+                                                        height: '45px'
+                                                    }
+                                                }}
+                                            />
+                                        </div>
+                                    ))}
+                                </Box>
 
-                                        <TextField
-                                            id={`kid-age-${index}`}
-                                            variant="outlined"
-                                            type="number"
-                                            value={kidsData[index]?.age || ''}
-                                            onChange={(e) => handleKidAgeChange(index, e.target.value)}
-                                            InputProps={{
-                                                endAdornment: (
-                                                    <InputAdornment position="end" sx={{ backgroundColor: 'lightgrey', padding: '5px', borderRadius: '4px', fontSize: '10px', width:'fit-content' }}>
-                                                        years old
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                            sx={{
-                                                width: '50%',
-                                                padding: '0',
-                                                marginBottom: '10px',
-                                                '& .MuiInputBase-root': {
-                                                    height: '45px'
-                                                }
-                                            }}
-                                        />
-                                    </div>
-                                ))}
+
                             </Box>
-
-
-                        </Box>
                         </div>
                     )}
                     <div className='button-container-p5'>
