@@ -6,7 +6,6 @@ import BottomBar from '../../common/component/BottomBar/BottomBar';
 import { useState } from 'react';
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
@@ -62,7 +61,7 @@ export default function Page4() {
 
     return (
         <div>
-            <Navbar>
+            <Navbar marginBottom="20px">
                 <CircularWithValueLabel value={50} />
             </Navbar>
             <div className='page4-container'>

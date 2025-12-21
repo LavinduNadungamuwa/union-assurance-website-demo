@@ -14,8 +14,6 @@ import { useNavigate } from "react-router-dom"
 import { useSelector } from 'react-redux';
 import CircularWithValueLabel from '../../common/component/ProgressBar/ProgressBar';
 
-
-
 export default function Page5() {
     const [kidsCount, setKidsCount] = useState(0);
     const [kidsData, setKidsData] = useState([]);
@@ -86,7 +84,7 @@ export default function Page5() {
 
     return (
         <div>
-            <Navbar>
+            <Navbar marginBottom="20px">
                 <CircularWithValueLabel value={75} />
             </Navbar>
             <div className='page5-container'>
