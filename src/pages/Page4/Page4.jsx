@@ -66,8 +66,8 @@ export default function Page4() {
             </Navbar>
             <div className='page4-container'>
                 <div className='text-container-p4'>
-                    <p>My name is {firstName || '(FirstName)'}</p>
-                    <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>
+                    <p>My name is <span style={{ color: '#FE5000' }}>{firstName || '(FirstName)'}</span></p>
+                    <p>And I am a <span style={{ color: '#FE5000' }}>{gender || '(Gender)'}</span> of <span style={{ color: '#FE5000' }}>{age !== null ? age : '(Age)'}</span> years old.</p>
                 </div>
                 <div className='inner-container'>
                     <p className='page4-title'>Are you married?</p>

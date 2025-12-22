@@ -90,14 +90,14 @@ export default function Page5() {
             <div className='page5-container'>
                 <div className='page5-content'>
                     <div className='text-container-p5'>
-                        <p>My name is {firstName || '(FirstName)'}</p>
-                        <p>And I am a {gender || '(Gender)'} of {age !== null ? age : '(Age)'} years old.</p>
+                        <p>My name is <span style={{ color: '#FE5000' }}>{firstName || '(FirstName)'}</span></p>
+                        <p>And I am a <span style={{ color: '#FE5000' }}>{gender || '(Gender)'}</span> of <span style={{ color: '#FE5000' }}>{age !== null ? age : '(Age)'}</span> years old.</p>
                         <p>
                             {maritalStatus === 'married'
-                                ? `I am married to ${spouseName || '(WifeName)'}`
+                                ? <>I am <span style={{ color: '#FE5000' }}>married</span> to <span style={{ color: '#FE5000' }}>{spouseName || '(WifeName)'}</span></>
                                 : maritalStatus === 'single'
-                                    ? 'I am single'
-                                    : 'I am married to (WifeName)'}
+                                    ? <>I am  <span style={{ color: '#FE5000' }}>single</span></>
+                                    : 'I am married to (PartnerName)'}
                         </p>
                     </div>
                     {maritalStatus === 'married' && (
