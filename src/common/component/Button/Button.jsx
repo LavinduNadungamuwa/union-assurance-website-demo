@@ -1,9 +1,9 @@
 import "./style.css";
 
-export default function Button({btnName='', bgcolor= {}, color= {}, border= {}, children, onClick, disabled = false}) {
+export default function Button({btnName='', bgcolor= {}, color= {}, border= {}, children, onClick, disabled = false, className = ''}) {
   return (
     <button 
-      className="btn" 
+      className={`btn ${className}`}
       style={{
         backgroundColor: bgcolor, 
         color: color, 
