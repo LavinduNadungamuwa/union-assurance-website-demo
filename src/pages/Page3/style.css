@@ -1,0 +1,45 @@
+.page3-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+}
+
+.inner-container-p3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    max-width: 320px;
+}
+
+.page3-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    width: 350px !important;
+    /* border: 1px solid #ccc; */
+}
+
+.page3-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 300px;
+    /* border: 1px solid #ccc; */
+    margin: 0 20px;
+}
+
+.form-row-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 16px;
+    width: 100%;
+}

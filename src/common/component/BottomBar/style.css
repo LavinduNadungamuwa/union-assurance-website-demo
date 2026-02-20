@@ -12,41 +12,40 @@
     background-color: white;
 }
 
-.social-buttons {
+.bottom-bar .social-buttons {
     display: flex;
     gap: 15px;
 }
 
-.social-btn {
+.bottom-bar .social-btn {
     background-color: lightgrey;
     border: none;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
     color: grey;
 }
 
-.social-btn:hover {
+.bottom-bar .social-btn:hover {
     background-color: #FE5000;
     color: white;
 }
 
-.social-btn svg {
+.bottom-bar .social-btn svg {
     font-size: 20px;
 }
 
-.bottom-link {
+.bottom-bar .bottom-link {
     color: grey;
     text-decoration: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.bottom-link:hover {
+.bottom-bar .bottom-link:hover {
     text-decoration: underline;
 }

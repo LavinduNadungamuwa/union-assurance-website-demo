@@ -1,0 +1,74 @@
+.page4-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+}
+
+.text-container-p4 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.text-container-p4 p {
+    margin: 5px 0;
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 320px;
+    width: 100%;
+    /* border: 1px solid #ccc; */
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.page4-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    /* border: 1px solid #ccc; */
+    width: 320px;
+}
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 300px;
+    width: 100%;
+    /* border: 1px solid #ccc; */
+    margin: 20px 0;
+}
+
+.toggle-button-group {
+    width: 100%;
+}
+
+.toggle-button-group button {
+    width: 100%;
+}
+
+.toggle-button-group .Mui-selected {
+    background-color: #FE5000 !important;
+    color: white !important;
+}
+
+.toggle-button-group .Mui-selected:hover {
+    background-color: #FE5000 !important;
+}
+
+.button-container-1 {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center;
+    margin-top: 10px;
+    width: 100% !important;
+    border: none !important;
+}
